@@ -71,6 +71,7 @@ def home():
 def predict():
     size = int(request.form['size'])
     people = int(request.form['people'])
+    
     insulation = int(request.form['insulation'])
     heating_cooling_systems = int(request.form['heating_cooling_systems'])
 
@@ -89,5 +90,27 @@ def predict():
                            heating_cooling_systems=heating_cooling_systems, predicted_energy=predicted_energy,
                            mse=mse, plot=img_base64)
 
+import pickle
+
+# Save the trained model to a pickle file
+model_pickle_path = 'trained_model.pkl'
+
+with open(model_pickle_path, 'wb') as model_pickle:
+    pickle.dump(model, model_pickle)
+
+print(f'Trained model has been pickled and saved to {model_pickle_path}')
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+# //////////////////////////////////////////////////////////////////////////////////////
+    
+import pickle
+
+# Save the trained model to a pickle file
+model_pickle_path = 'trained_model.pkl'
+
+with open(model_pickle_path, 'wb') as model_pickle:
+    pickle.dump(model, model_pickle)
+
+print(f'Trained model has been pickled and saved to {model_pickle_path}')
