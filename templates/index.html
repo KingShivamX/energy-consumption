@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Consumption Prediction</title>
+    <style>
+        * {
+            align-items: center;
+            text-align: center;
+            /* padding: 20px; */
+        }
+
+    </style>
+</head>
+<body><small></small>
+    <h1>Energy Consumption Prediction</h1>
+    <form method="post" action="/">
+        <label for="size">Enter Size In square feet:</label>
+        <input type="text" name="size" required><br>
+        <label for="people">Enter The number of people living in the house:</label>
+        <input type="text" name="people" required><br>
+        <label for="insulation">Enter Insulation rating (1 to 5):</label>
+        <input type="text" name="insulation" required><br>
+        <label for="heating_cooling_systems">Enter Heating and Cooling Systems rating (1 to 5):</label>
+        <input type="text" name="heating_cooling_systems" required><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if size %}
+        <h2>Prediction Results:</h2>
+        <p>Input Building Size: {{ size }} sqft</p>
+        <p>Number of People: {{ people }}</p>
+        <p>Insulation Rating: {{ insulation }}</p>
+        <p>Heating and Cooling Systems Rating: {{ heating_cooling_systems }}</p>
+        <p>Predicted Energy Consumption: {{ predicted_energy }} Kilowatts</p>
+        <p>Mean Squared Error: {{ mse }}</p>
+        <img src="data:image/png;base64, {{ plot }}" alt="Prediction Plot">
+    {% endif %}
+</body>
+</html>
