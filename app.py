@@ -10,7 +10,7 @@ import base64
 app = Flask(__name__)
 
 # Load the data from the CSV file
-file_path = 'zzz_deployment\energy-consumption\my_data.csv'
+file_path = 'energy-consumption\my_data.csv'
 df = pd.read_csv(file_path)
 
 # Split the dataset into features (X) and target variable (y)
