@@ -4,43 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy Consumption Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        * {
-            align-items: center;
-            text-align: center;
-            /* padding: 20px; */
+        body {
+            margin: 0;
+            padding: 0;
+            color: #000000;
+            /* background-color:#ffc30c; */
+            background-color: #FFBF00;
+            background-image: url(https://img.freepik.com/free-photo/abstract-luxury-clear-yellow-wall-well-use-as-backdrop-background-layout_1258-207.jpg?w=1380&t=st=1709346898~exp=1709347498~hmac=adde2e136b2665ca9381c8f22618d62062c157602956a1ee363b83fa6763a8ad);
+            background-position: center;
+            background-size: cover;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
-        body{
-            background-color: bisque;
-            font-weight: bold;
-            font-family: sans-serif;
+        h1,h3,h2 {
+            text-align: center;
+            font-size: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        .formmm {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        .formin {
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            flex-direction: column;
+            width: fit-content;
+        }
+        .elm{
+            margin: 2px;
         }
 
+        .result {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 20px;
+            margin-top: 50px;
+        }
+        .resulll h2{
+            text-align: center;
+            color: #12892B;
+            text-decoration: underline;
+        }
+        .resultput h2 {
+            justify-self: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .graph {
+            margin: 3px;
+        }
+        input {
+            background-color: #ffe69d;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 6px;
+            color: #000000;
+            width: 60px;
+            padding: 8px;
+            font-size: 1.5rem;
+            box-shadow: 5px 5px 10px black;
+        }
+        p{
+            font-size: 1.5rem;
+        }
+        label {
+            font-size: 1.7rem;
+        }
+        .elemsub {
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+        }
+        .elemsub button {
+            background-color: #ffe69d;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 6px;
+            color: #564400;
+            width: 500px;
+            height: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 5px 5px 10px black;
+            transition-duration: 0.5s;
+        } 
+        .elemsub button:hover{
+            background-color: #ffffff;
+        }
+        .graph .ingraph {
+            border: 5px solid rgb(0, 0, 0);
+            border-radius: 10px;
+        }
+        .resel h3 {
+            font-size: 1.5rem;
+            margin-top: 50px;
+        }
+        .xxx {
+            align-self: center;
+            justify-self: center;
+        }
+        .resultput {
+            align-self: center;
+            justify-self: center;
+        }
     </style>
 </head>
-<body><small></small>
-    <h1>Energy Consumption Prediction</h1>
-    <form method="post" action="/">
-        <label for="size">Enter Size In square feet:</label>
-        <input type="text" name="size" required><br>
-        <label for="people">Enter The number of people living in the house:</label>
-        <input type="text" name="people" required><br>
-        <label for="insulation">Enter Insulation rating (1 to 5):</label>
-        <input type="text" name="insulation" required><br>
-        <label for="heating_cooling_systems">Enter Heating and Cooling Systems rating (1 to 5):</label>
-        <input type="text" name="heating_cooling_systems" required><br>
-        <button type="submit">Predict</button>
-    </form>
+<body>
+    <h1><i class="fa-solid fa-sun"></i> Datathon HackHarmony - Energy Consumption Prediction ML Model <i class="fa-solid fa-sun"></i></h1>
+    <h3>Enter The Values Correctly</h3>
+
+    <!-- //////////////////////// -->
+    <div class="formmm">
+        <form method="post" action="/" class="formin">
+            <div class="elm">
+                <label for="size"><i class="fa-solid fa-clipboard-question"></i> Enter the No. of Rooms:</label>
+                <input type="text" name="size" id="size" required><br>
+                <p>Enter The No. of Total Rooms Including Parking If Availabe in Your House</p>
+            </div>
+            <div class="elm">
+                <label for="people"><i class="fa-solid fa-clipboard-question"></i> Enter Occupancy</label>
+                <input type="text" name="people" id="people" required><br>
+                <p>Enter the No. of Total Prople living in your House Including You</p>
+            </div>
+            <div class="elm">
+                <label for="insulation"><i class="fa-solid fa-clipboard-question"></i> Heavy Appliances rating (1 to 5)</label>
+                <input type="text" name="insulation" id="insulation" required><br>
+                <p>Analyse amoung these how many of you have in your house: <br>
+                (Refrigerator, Television, Geyser, Washing Machine, Cloth Iron)</p>
+            </div>
+            <div class="elm">
+                <label for="heating_cooling_systems"><i class="fa-solid fa-clipboard-question"></i> Heating and Cooling System rating (1 to 5)</label>
+                <input type="text" name="heating_cooling_systems" id="heating_cooling_systems" required><br>
+                <p>If You have 'AC / Room Heater' Enter "5" as rating,<br>
+                Else Enter the No. of Fans in your House</p>
+            </div>
+            <div class="elm elemsub">
+                <button type="submit">Predict Energy Consumption</button>
+            </div>
+
+            <!-- /////////////// -->
 
     {% if size %}
-        <h2>Prediction Results:</h2>
-        <p>Input Building Size: {{ size }} sqft</p>
-        <p>Number of People: {{ people }}</p>
-        <p>Insulation Rating: {{ insulation }}</p>
-        <p>Heating and Cooling Systems Rating: {{ heating_cooling_systems }}</p>
-        <p>Predicted Energy Consumption: {{ predicted_energy }} Kilowatts</p>
-        <p>Mean Squared Error: {{ mse }}</p>
-        <img src="data:image/png;base64, {{ plot }}" alt="Prediction Plot">
+        <div class="result">
+            <div class="resel resultput">
+                <h2><i class="fa-solid fa-square-poll-horizontal"></i> Prediction Results:</h2>
+            </div>
+            <div class="resel">
+                <p><i class="fa-solid fa-arrows-to-dot"></i> Input No. of Rooms: {{ size }}</p>
+            </div>
+            <div class="resel">
+                <p><i class="fa-solid fa-arrows-to-dot"></i> Occupancy (Number of People): {{ people }}</p>
+            </div>
+            <div class="resel">
+                <p><i class="fa-solid fa-arrows-to-dot"></i> Heavy Appliances Rating: {{ insulation }}</p>
+            </div>
+            <div class="resel">
+                <p><i class="fa-solid fa-arrows-to-dot"></i> Heating and Cooling Systems Rating: {{ heating_cooling_systems }}</p>
+            </div>
+            <div class="resel resulll">
+                <h2><i class="fa-solid fa-square-poll-vertical"></i> Predicted Electricity Bill: {{ predicted_energy|round(2) }} Rupees</h2>
+            </div>
+            <div class="resel resulll">
+                <h2><i class="fa-solid fa-square-poll-vertical"></i> Consumed Electricity Units: {{ predicted_energy_divided|round(2) }} KiloWatts</h2>
+            </div>
+            <div class="resel xxx"><h3><i class="fa-solid fa-chart-simple"></i> Matplotlib Graph Of Collected And Predicted Data</h3></div>
+            <div class="resel graph">
+                <img class="ingraph" src="data:image/png;base64, {{ plot }}" alt="Prediction Plot">
+            </div>
+        </div>
     {% endif %}
+
+        </form>
+    </div>
+
 </body>
 </html>
