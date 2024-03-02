@@ -9,7 +9,7 @@ import base64
 app = Flask(__name__)
 
 
-file_path = 'zzzz_dep\my_data.csv'
+file_path = 'energy-consumption\my_data.csv'
 df = pd.read_csv(file_path)
 
 
@@ -86,6 +86,7 @@ def predict():
                            heating_cooling_systems=heating_cooling_systems, predicted_energy=predicted_energy,
                            predicted_energy_divided=predicted_energy_divided,
                            plot=img_base64, )
+
 
 if __name__ == '__main__':
     app.run(debug=True)
