@@ -8,17 +8,15 @@ import base64
 
 app = Flask(__name__)
 
-
 file_path = 'energy-consumption\my_data.csv'
 df = pd.read_csv(file_path)
-
 
 X = df[['NoOfRooms', 'Occupancy', 'HeavyAppliances', 'HeatingCoolingSystems']]
 y = df['ElectricityBill']
 
-
 model = LinearRegression()
 model.fit(X, y)
+
 
 def generate_plot(size, predicted_energy):
 
@@ -62,6 +60,7 @@ def generate_plot(size, predicted_energy):
 
     return img_base64
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -85,8 +84,12 @@ def predict():
     return render_template('index.html', size=size, people=people, insulation=insulation,
                            heating_cooling_systems=heating_cooling_systems, predicted_energy=predicted_energy,
                            predicted_energy_divided=predicted_energy_divided,
-                           plot=img_base64, )
+                           plot=img_base64,)
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+# /////////////////////////////////////////////////////////////////////////////////

@@ -12,7 +12,7 @@
             color: #000000;
             /* background-color:#ffc30c; */
             background-color: #FFBF00;
-            background-image: url(https://img.freepik.com/free-photo/abstract-luxury-clear-yellow-wall-well-use-as-backdrop-background-layout_1258-207.jpg?w=1380&t=st=1709346898~exp=1709347498~hmac=adde2e136b2665ca9381c8f22618d62062c157602956a1ee363b83fa6763a8ad);
+            background-image: url(https://img.freepik.com/free-photo/abstract-luxury-clear-yellow-wall-well-use-as-backdrop-background-layout_1258-207.jpg?w=1380&t=st=1709974846~exp=1709975446~hmac=f47654315faafea43cc21ef4e3a860892f6c33d4b4f2565b447b55a7f101800f);
             background-position: center;
             background-size: cover;
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -21,15 +21,18 @@
             text-align: center;
             font-size: 2rem;
         }
+
         h1 {
             font-size: 2.5rem;
         }
+        
         .formmm {
             margin-top: 30px;
             display: flex;
             justify-content: center;
             align-content: center;
         }
+        
         .formin {
             display: flex;
             justify-content: center;
@@ -37,6 +40,7 @@
             flex-direction: column;
             width: fit-content;
         }
+        
         .elm{
             margin: 2px;
         }
@@ -49,6 +53,7 @@
             margin: 20px;
             margin-top: 50px;
         }
+        
         .resulll h2{
             text-align: center;
             color: #12892B;
@@ -119,7 +124,10 @@
         }
     </style>
 </head>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
 <body>
+
     <h1><i class="fa-solid fa-sun"></i> Datathon HackHarmony - Energy Consumption Prediction ML Model <i class="fa-solid fa-sun"></i></h1>
     <h3>Enter The Values Correctly</h3>
 
@@ -152,6 +160,7 @@
                 <button type="submit">Predict Energy Consumption</button>
             </div>
 
+      
             <!-- /////////////// -->
 
     {% if size %}
@@ -172,10 +181,10 @@
                 <p><i class="fa-solid fa-arrows-to-dot"></i> Heating and Cooling Systems Rating: {{ heating_cooling_systems }}</p>
             </div>
             <div class="resel resulll">
-                <h2><i class="fa-solid fa-square-poll-vertical"></i> Predicted Electricity Bill: {{ predicted_energy|round(2) }} Rupees</h2>
+                <h2><i class="fa-solid fa-square-poll-vertical"></i> Predicted Electricity Bill For Month: {{ predicted_energy|round(2) }} Rupees</h2>
             </div>
             <div class="resel resulll">
-                <h2><i class="fa-solid fa-square-poll-vertical"></i> Consumed Electricity Units: {{ predicted_energy_divided|round(2) }} KiloWatts</h2>
+                <h2><i class="fa-solid fa-square-poll-vertical"></i> Consumed Electricity Units In Month: {{ predicted_energy_divided|round(2) }} KiloWatts</h2>
             </div>
             <div class="resel xxx"><h3><i class="fa-solid fa-chart-simple"></i> Matplotlib Graph Of Collected And Predicted Data</h3></div>
             <div class="resel graph">
@@ -189,3 +198,6 @@
 
 </body>
 </html>
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
