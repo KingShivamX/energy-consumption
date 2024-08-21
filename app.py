@@ -8,7 +8,7 @@ import base64
 
 app = Flask(__name__)
 
-file_path = 'energy-consumption\my_data.csv'
+file_path = 'Projects/energy-consumption/my_data.csv'
 df = pd.read_csv(file_path)
 
 X = df[['NoOfRooms', 'Occupancy', 'HeavyAppliances', 'HeatingCoolingSystems']]
