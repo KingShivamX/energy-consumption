@@ -27,3 +27,10 @@
    ```bash
    git clone https://github.com/KingShivamX/energy-consumption.git
    cd energy-consumption
+   ```
+
+## Watch the Demo
+
+Check out the demo video on [YouTube](https://www.youtube.com/watch?v=Q8R45QDseDE) to see the project in action!
+
+## Thank You!
